@@ -18,9 +18,9 @@ const Nav = ({cartItems}) => {
           <Link to={'/Category/jewelery'} className='li'> Jewels</Link>
           <Link to={'/Category/electronics'} className='li'>Electronics</Link>
         </ul>
-            <h1><Link style={{color:"#fff",textDecoration:"none"}} to={"/"}>Shopping App</Link></h1>
+            <h1><Link style={{color:`rgb(35, 35, 35)`,fontFamily:` 'Solitreo', cursive` ,textDecoration:"none",fontSize:"3rem"}} to={"/"}> Shopping App</Link></h1>
                 <Link to={'/Checkout/'} className="cart-container">
-                <BsCart4 style={{color:"grey"}} className="cart"/>
+                <BsCart4 style={{color:`rgb(35, 35, 35)`}} className="cart"/>
                 {items.length>0? <div className="cart-items"> <span>{items.length}</span></div> : null}
             </Link>
       </nav>

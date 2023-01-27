@@ -44,6 +44,12 @@ const Checkout = ({props}) => {
                     <h3>{item.title}</h3>
                     <h3>${item.price}</h3>
                   </div>
+                  <div className="remove"> x </div>
+                  <div className="quantity-cont">
+                    <div className="qbtn sub">-</div>
+                    <div className="quantity">1</div>
+                    <div className="qbtn add">+</div>
+                  </div>
                 </div>
               </div>
             ))}

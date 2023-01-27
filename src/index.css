@@ -4,39 +4,48 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   color:#fff;
-  background-color: rgb(110, 110, 110);
+  background-color: rgb(217, 216, 216);
+  
+}
+/*loading*/
+.loading{
+  position: absolute;
+  right: 40%;
+  top: 30%;
+  font-size: 90px;
+  color: black;
 }
 nav{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   height: auto;
-  background-color: rgb(42, 42, 42);
+  background-color: rgb(195, 195, 195);
 }
+
 ul{
   display: flex;
   margin-left: -300px;
   list-style-type: none;
 }
+
 .li{
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 2rem;
   padding: 0 15px;
-  color: #fff;
+  color: rgb(35, 35, 35);
   text-decoration: none;
+  transition: 0.2s;
 }
-.li :active{
-  color: red;
+.li:hover{
+  color: rgb(110, 110, 110);
+  transform: scale(1.1);
 }
+
 h1{
   font-size: 2rem;
 }
 .cart-container{
-  height: 90px;
-  width: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
 }
 .cart{
@@ -48,51 +57,81 @@ h1{
   background-color: crimson;
   border-radius: 50%;
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 0px;
+  right: 0px;
   color: #fff;
-}
-span{
-  margin: 0 30%;
-}
-.home-container{
-  width: 100%;
-  height: auto;
   display: flex;
-  text-align: center;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
-.cards{
- height: 600px;
- width: 300px;
- margin: 40px auto;
- border-radius: 10px;
- background-color: #fff;
- text-decoration: none;
+/*home section--- START*/
+.home-container{
+  margin: 0 auto;
+  height: auto;
+  width: 90%;
 }
-.home-img{
+.home-container button{
+  background-color: #d71414;
+  color: #fff;
+  font-size: larger;
+  border-radius: 10px;
+  border:none;
+  padding: 10px;
+}
+.banner{
   width: 100%;
-  height: 60%;
-  margin: 10px auto;
+  background: linear-gradient(#61c3f1, #8088df);
+  border-radius: 15px;
+  padding-left: 30px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-top: 20px;
+  position: relative;
 }
-.home-img img{
+.headphones-cont{
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  right: 30%;
+  top:7%
+}
+.headphones-cont img{
   width: 100%;
   height: 100%;
-
+  object-fit: contain;
 }
-.txt{
+.home-content{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+}
+.card{
+  width:290px ;
   color: black;
-  cursor: context-menu;
-
+  transition: .5s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.card:hover{
+  transform: scale(1.1);
+}
+.card-img{
+  width: 280px;
+  height: 230px;
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-img img{
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  border-radius: inherit;
 }
 
-button{
-  width: 60%;
-  height: 50px;
-  font-size:1.5rem;
-  border-radius: 50px;
-  cursor:  pointer;
-}
+/*home section--- END*/
+
 /*-------about----*/
 .about-container{
   display: flex;
@@ -158,9 +197,11 @@ input{
 .cart-items-container{
   display: flex;
   width: 90%;
-  border: solid red;
   border-radius: 20px;
   margin: 10px auto;
+  position: relative;
+  border: none;
+  box-shadow:1px 1px 1px 1px  rgb(154, 154, 154);
 }
 .cart-btn{
   display: flex;
@@ -181,4 +222,56 @@ input{
 .cart-btn div:hover{
   background-color: blue;
   color: #fff;
+}
+.quantity-cont{
+  display: flex;
+  position:absolute;
+  right: 35px;
+  bottom:25px;
+  width:100px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.qbtn{
+  width:30%;
+  height: auto;
+  border: none;
+  text-align: center;
+  border-radius: 10px;
+  font-size:1.5rem;
+  cursor: pointer;
+  color: black;
+  background-color: rgb(169, 169, 169);
+  padding: 0;
+  margin: 0;
+}
+.remove{
+  position: absolute;
+  font-size: 1rem;
+  width:30px;
+  background-color: rgb(126, 126, 126);
+  color: rgb(214, 214, 214);
+  right: 0;
+  top:0;
+  border-top-right-radius: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+.remove:hover{
+  background-color: crimson;
+  color: #fff;
+}
+
+/*other*/
+.sale{
+  
+  background-color: rgb(42, 42, 42);
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding:30px;
+  font-size: 3rem;
+  font-family: sans-serif;
+  font-weight: 700;
 }
