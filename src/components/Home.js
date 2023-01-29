@@ -10,7 +10,7 @@ const Home = ({props}) => {
   const[data2,setData2] = useState([])
   const woman = "women's clothing"
 
-  useEffect(()=>{axios.get('https://fakestoreapi.com/products?limit=6').then(res=>setData(res.data))},[])
+  useEffect(()=>{axios.get('https://fakestoreapi.com/products?limit=8').then(res=>setData(res.data))},[])
   useEffect(()=>{axios.get(`https://fakestoreapi.com/products/category/${woman}`).then(res=>setData2(res.data))},[])
   //results of API id,image, description , category, price,  title, rating{count , rate}
 
@@ -40,7 +40,7 @@ const Home = ({props}) => {
               <img src={item.image} alt="img" />
             </div>
             <h2 style={{marginTop:'5px',fontWeight:'900'}}>$ {item.price}</h2>
-            <p style={{margin:'0',fontWeight:'500' }} >{item.title}</p>
+            <p style={{margin:'0',fontWeight:'500',color:'orange' }} >{item.title}</p>
           </Link>
         ))}
         </div>

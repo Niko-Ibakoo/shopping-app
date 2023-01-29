@@ -92,13 +92,13 @@ h1{
   position: absolute;
   height: 400px;
   width: 400px;
-  right: 30%;
+  right: 10%; /*put back to 30*/
   top:7%
 }
 .headphones-cont img{
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 .home-content{
   display: grid;
@@ -111,6 +111,7 @@ h1{
   cursor: pointer;
   text-decoration: none;
 }
+
 .card:hover{
   transform: scale(1.1);
 }
