@@ -15,21 +15,20 @@ const Category = ({props}) => {
   return (
     //rendering all item in that category
     <div>
-    {item&&<div className="home-container">
+    {item[0]?<div style={{margin:'7% 20%'}} className='home-content'>
       {item.map((item, index) =>(
-        <div className="cards" key={item.id}>
-          <div className="home-img">
+        <Link to={'/About/'+item.id} className="card" key={item.id}>
+          <div className="card-img">
             <img src={item.image} alt="" />
           </div>
-          <div className="txt">
-            <Link style={{color:"#000"}} to={'/About/'+item.id}>{item.title}</Link>
-            <h2><span>${item.price}</span></h2>
+          <div>
+          <h2 style={{margin:'0'}}>${item.price}</h2>
+            <p style={{color:"#000",textDecoration:'none',width:'100%',marginbottom:'30px'}} >{item.title}</p>
           </div>
-            <button onClick={()=>props.setItems(item)}>Add to cart</button>
           
-        </div>
+        </Link>
       ))}
-    </div>}
+    </div>: <div className='loading'>LOADING...</div>}
 
   </div>
   )

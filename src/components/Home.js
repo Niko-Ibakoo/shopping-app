@@ -10,7 +10,7 @@ const Home = ({props}) => {
   const[data2,setData2] = useState([])
   const woman = "women's clothing"
 
-  useEffect(()=>{axios.get('https://fakestoreapi.com/products?limit=8').then(res=>setData(res.data))},[])
+  useEffect(()=>{axios.get('https://fakestoreapi.com/products/category/electronics').then(res=>setData(res.data))},[])
   useEffect(()=>{axios.get(`https://fakestoreapi.com/products/category/${woman}`).then(res=>setData2(res.data))},[])
   //results of API id,image, description , category, price,  title, rating{count , rate}
 
@@ -40,13 +40,13 @@ const Home = ({props}) => {
               <img src={item.image} alt="img" />
             </div>
             <h2 style={{marginTop:'5px',fontWeight:'900'}}>$ {item.price}</h2>
-            <p style={{margin:'0',fontWeight:'500',color:'orange' }} >{item.title}</p>
+            <p style={{margin:'0',fontWeight:'500',color:'grey' }} >{item.title}</p>
           </Link>
         ))}
         </div>
-
+            {/*woman section */}
         <div style={{textAlign:'center',margin:'30px 0px'}}>
-        <h1 style={{fontSize:'50px',margin:'0',color:'black'}}>Women sale 50% off !</h1>
+        <h1 style={{fontSize:'50px',margin:'0',color:'black'}}>Womens'clothes SALE - 50% off !</h1>
           <p style={{fontSize:'larger',color:'black'}}>check out our collection for women's items</p>
        </div>
 
@@ -58,7 +58,7 @@ const Home = ({props}) => {
         </div>
        <div style={{textAlign:'center',margin:'30px 0px'}}>
         <h1 style={{fontSize:'50px',margin:'0',color:'black'}}>Best Seller Products</h1>
-          <p style={{fontSize:'larger',color:'black'}}>some stupid thing about speakers</p>
+          
        </div>
 
       </div>
