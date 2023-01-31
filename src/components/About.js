@@ -7,10 +7,21 @@ import {FaStar} from 'react-icons/fa'
 const About = ({props}) => {
   const params = useParams()
   const[product,setProduct] = useState({})
+  const[quantity,setQuantity] = useState(0)
 
+  //add
+  const add =()=>{
+    setQuantity(previous=> previous + 1)
+  }
+  //remove
+  const remove =()=>{
+    if(quantity>0){
+      setQuantity(previous=> previous -1)
+    }
+  }
   //in about we take id of item as params and make api call based on id of item, and display it
   useEffect(()=>{ axios.get(`https://fakestoreapi.com/products/${params.id}`).then(res=>setProduct(res.data))},[params.id])
-console.log(product)
+
   return (
     //displaying individual item
     <div>
@@ -30,9 +41,9 @@ console.log(product)
           <h2 >Quantity:</h2>
           <div>
           </div>
-            <button style={{marginLeft:'20px'}}>-</button>
-            <button style={{borderLeft:'none',borderRight:'none', color:'grey',cursor:'initial'}}> 0 </button>
-            <button>+</button>
+            <button onClick={remove} style={{marginLeft:'20px'}}>-</button>
+            <button style={{borderLeft:'none',borderRight:'none', color:'grey',cursor:'initial'}}> {quantity} </button>
+            <button onClick={add}>+</button>
 
           </div>
           <div className="btns">

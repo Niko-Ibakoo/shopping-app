@@ -1,11 +1,11 @@
 import React from "react"
 import axios from "axios"
+import Footer from "../components/Footer"
 import { useEffect, useState } from "react"
-import { Link, useParams } from "react-router-dom"
+import { Link } from "react-router-dom"
 import headphones from '../shopping_assets/headphones.png'
-const Home = ({props}) => {
+const Home = () => {
 
-  const params = useParams()
   const[data,setData] = useState([])
   const[data2,setData2] = useState([])
   const woman = "women's clothing"
@@ -34,7 +34,7 @@ const Home = ({props}) => {
        {/*content grid*/}
         <div className="home-content">
 
-        {data&& data.map((item,index)=>(
+        {data&& data.map(item=>(
           <Link to= {'/About/'+ item.id} key={item.id} className="card">
             <div className="card-img">
               <img src={item.image} alt="img" />
@@ -45,23 +45,22 @@ const Home = ({props}) => {
         ))}
         </div>
             {/*woman section */}
-        <div style={{textAlign:'center',margin:'30px 0px'}}>
-        <h1 style={{fontSize:'50px',margin:'0',color:'black'}}>Womens'clothes SALE - 50% off !</h1>
-          <p style={{fontSize:'larger',color:'black'}}>check out our collection for women's items</p>
-       </div>
-
-       <div className="banner"> {/*top-box */}
-          <h2 style={{color:'black',margin:'0'}}>Beats solo</h2>
-          <h1 style={{color:'black',margin:'0',fontSize:'60px'}}>Wireless</h1>
-          <h1 style={{fontSize:'100px',margin:'0',textShadow: `2px 2px 4px #000000`}}>HEADPHONES</h1>
-          <button style={{marginTop:'30px'}}>Shop wireless headphones</button>
-        </div>
-       <div style={{textAlign:'center',margin:'30px 0px'}}>
-        <h1 style={{fontSize:'50px',margin:'0',color:'black'}}>Best Seller Products</h1>
-          
-       </div>
-
+            <div style={{textAlign:'center',width:'100%',background: 'linear-gradient(#61c3f1, #8088df)',borderRadius:'15px'}}>
+              <h1 style={{fontSize:'70px',textShadow: `2px 2px 4px #000000`}}>WOMEN'S COLLECTION </h1>
+            </div>
+            <div className="home-content">
+            {data2&& data2.map((item,index)=>(
+          <Link to= {'/About/'+ item.id} key={item.id} className="card">
+            <div className="card-img">
+              <img src={item.image} alt="img" />
+            </div>
+            <h2 style={{marginTop:'5px',fontWeight:'900'}}>$ {item.price}</h2>
+            <p style={{margin:'0',fontWeight:'500',color:'grey' }} >{item.title}</p>
+          </Link>
+        ))}
+            </div>
       </div>
+      <Footer/>
 
 
      
